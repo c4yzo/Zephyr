@@ -1,0 +1,116 @@
+.spark {
+    --rem: 16;
+    --swiper-theme-color: #007aff;
+    --swiper-navigation-size: 44px;
+    font-synthesis: none;
+    font-variation-settings: "slnt" 0;
+    color: #000;
+    --container-inline-margin: clamp(16px, 7.4074074074vw - 40.8888888889px, 48px);
+    text-align: center;
+    font-weight: 600;
+    --target-font-size: clamp(3.75rem, 8.7719298246vw + 2.1052631579rem, 12.5rem);
+    line-height: 1.1;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    vertical-align: baseline;
+    --listing-font-scale: 1;
+    --font-size: calc( var(--target-font-size) * var(--listing-font-scale) );
+    overflow-wrap: break-word;
+    opacity: 1;
+    font-family: var(--font-family),"Ellipsis","FontspringNotDef";
+    user-select: initial;
+    cursor: initial;
+    --scale-factor: 1;
+    font-size: min(var(--target-font-size) * var(--scale-factor) * var(--listing-font-scale),var(--fluid-font-size));
+    --fluid-font-size: var(--lg-fluid);
+    --font-family: spark21d5f38c54a29a430dd8dad6ca7a0c175dfd366c53986;
+    display: inline-block;
+    white-space: nowrap;
+    --sm-fluid: clamp(89.33333333333333 * 1px, calc( ((100 * (245.33333333333334 - 89.33333333333333)) / (1200 - 300) * 1vw) + ((300 * 245.33333333333334 - 1200 * 89.33333333333333) / (300 - 1200) * 1px) ), 245.33333333333334 * 1px);
+    --lg-fluid: clamp(245.33333333333334 * 1px, calc( ((100 * (400 - 245.33333333333334)) / (1896 - 1200) * 1vw) + ((1200 * 400 - 1896 * 245.33333333333334) / (1200 - 1896) * 1px) ), 400 * 1px);
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.button-register {
+	color: #fff;
+	background-color: #000000;
+	border-color: #000000;
+}
+
+.button-register:hover, .button-register:focus, .button-register:active, .button-register:hover {
+	color: #fff;
+	background-color: #0069d9;
+	border-color: #0069d9;
+}
+
+.button-register.button-effect-ujarak:before {
+	background-color: #0069d9;
+}
+
+.button-register.button-effect-ujarak:after {
+	background-color: #000000;
+}
+
+.button-register.button-effect-ujarak:hover {
+	background: transparent;
+}
+
+.right-side .first-child > a {
+    padding: 19px 30px;
+}
+
+.right-side div {
+    margin-left: 20px;
+}
+
+.caption-city {
+    position: absolute;
+    z-index: 1;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.caption-city h3 {
+    color: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+}
+
+.swiper-wrapper h1, .swiper-wrapper h2, .swiper-wrapper h3, .swiper-wrapper h4, .swiper-wrapper h5, .swiper-wrapper h6 {
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+#place-list {
+    position: absolute;
+    z-index: 10;
+    list-style: none;
+    margin: 2px;
+    padding: 0;
+    top: 100%;
+    left: -2px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    overflow: hidden;
+}
+
+#place-list li {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+#place-list li:hover {
+    background-color: #ddd;
+}

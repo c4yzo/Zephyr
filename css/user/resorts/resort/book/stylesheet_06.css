@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color:#ff99b6;
+    background-image:
+    radial-gradient(at 12% 1%, hsla(20,88%,77%,1) 0px, transparent 50%),
+    radial-gradient(at 92% 2%, hsla(239,66%,76%,1) 0px, transparent 50%),
+    radial-gradient(at 70% 29%, hsla(66,74%,72%,1) 0px, transparent 50%),
+    radial-gradient(at 40% 95%, hsla(252,76%,76%,1) 0px, transparent 50%),
+    radial-gradient(at 77% 73%, hsla(320,94%,62%,1) 0px, transparent 50%),
+    radial-gradient(at 62% 38%, hsla(196,94%,66%,1) 0px, transparent 50%),
+    radial-gradient(at 58% 49%, hsla(352,74%,77%,1) 0px, transparent 50%);
+}
+
+.popup {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.6s, top 0.6s;
+}
+
+.open-popup {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup .room-numbers-span {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.popup .room-numbers {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.popup .room-numbers div {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    background: linear-gradient(45deg, #ffd700, #ffcc00);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.popup button {
+    width: 100%;
+    margin-top: 40px;
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#complete-payment-msg {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.razorpay-payment-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}

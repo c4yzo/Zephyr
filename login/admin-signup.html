@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zephyr | Admin Signup</title>
+	<link rel="icon" href="../img/logo/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/general/site/style.css">
+    <link href="../css/login/bootstrap.css" rel="stylesheet">
+    <link href="../css/login/admin-signup.css" rel="stylesheet">
+    <link href="../css/login/animations.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="form-header">
+            <h1>Resort Details</h1>
+            <h5>Enter the details about your resort</h5>
+        </div>
+        <div id="form-main">
+            <form action="admin-signup.php" method="post" id="form-tag" enctype="multipart/form-data">
+                <div id="section1">
+                    <div id="sf1-r1" class="row">
+                        <label for="name" class="form-label label-fs-l">NAME OF RESORT</label>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div id="sf1-r2" class="row">
+                        <label for="address" class="form-label label-fs-l">ADDRESS</label>
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="address" name="address">
+                            <label for="address" class="form-label">Street Address</label>
+                        </div>
+
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="address2">
+                            <label for="address2" class="form-label">Street Address 2 <span class="text-body-secondary">(Optional)</span></label>
+                        </div>
+
+                        <div class="col-md-6" style="position: relative;">
+                            <input type="text" class="form-control" id="town" name="town">
+                            <label for="town" class="form-label">Town</label>
+                            <ul id="place-list" class="rounded-1"></ul>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="district" name="district">
+                            <label for="district" class="form-label">District</label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="state" name="state">
+                            <label for="state" class="form-label">State</label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="country" name="country">
+                            <label for="country" class="form-label">Country</label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="pincode" name="pincode">
+                            <label for="pincode" class="form-label">Pincode</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="section2">
+                    <div class="default-image">
+                        <img src="../img/default/resort.png" alt="">
+                    </div>
+                    <div id="carousel">
+                        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+                            <div class="carousel-indicators" id="carousel-indicators"></div>
+                            <div class="carousel-inner" id="carousel-inner"></div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <label id="upload-img-label" for="upload-img"  class="upload-img-label">Upload Images</label>
+                    <input id="upload-img" name="upload-img[]" type="file" multiple accept="image/jpeg, image/pjpeg, image/png" class="upload-img" onchange="checkFiles(this)">
+                </div>
+                <div id="section3">
+                    <label for="about" class="form-label label-fs-l">DESCRIPTION ABOUT YOUR RESORT</label>
+                    <textarea id="about" name="about" cols="30" rows="8" class="form-control"></textarea><br>
+                    <div class="row row-cols-md-2 row-cols-1">
+                        <div class="col">
+                            <label for="glocation" class="form-label label-fs-l">LOCATION OF RESORT</label>
+                            <input type="text" class="form-control" id="glocation" name="glocation" onchange="changeLocation()">
+                            <label for="glocation" class="form-label">Copy the iframe from google map</label>
+                            <input type="text" class="form-control" id="latitude"  name="latitude">
+                            <label for="latitude" class="form-label">Latitude</label>
+                            <input type="text" class="form-control" id="longitude" name="longitude">
+                            <label for="longitude" class="form-label">Longitude</label>
+                            <label for="glocation" class="form-label">Please ensure that the address you provide matches the given location</label>
+                        </div>
+                        <div class="col" id="glocation-frame"></div>
+                    </div>
+                </div>
+                <div id="section4">
+                    <div class="row row-cols-lg-2 row-cols-1">
+                        <div class="col">
+                            <div class="form-group autocomplete-container">
+                                <label for="highlights" class="form-label label-fs-l">SELECT HIGHLIGHTING FACILITIES</label>
+                                <input type="text" class="form-control" id="highlights" oninput="showAutocompleteForHighlight()">
+                                <ul id="highlight-list" class="rounded-1"></ul>
+                                <small class="form-text text-muted">Max. 6 Highlights</small>
+                                <div id="selected-highlights" class="row row-cols-lg-2 row-cols-1"></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group autocomplete-container">
+                                <label for="facilities" class="form-label label-fs-l">SELECT OTHER FACILITIES</label>
+                                <input type="text" class="form-control" id="facilities" oninput="showAutocompleteForFacility()">
+                                <ul id="facility-list" class="rounded-1"></ul>
+                                <small class="form-text text-muted">If your facility is not in this list please click here</small>
+                                <div id="selected-facilities" class="row row-cols-xl-3 row-cols-lg-2 row-cols-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="section5">
+                    <div>
+                        <h4>Property policies</h4><br>
+                        <div id="div-main" class="row row-cols-2">
+                            <div class="col">
+                                <div class="div-border">
+                                    <h5>POLICY 1</h5>
+                                    <label for="policy-name-1" class="form-label label-fs-l">NAME OF POLICY</label>
+                                    <input type="text" class="form-control" id="policy-name-1" name="policy-name-1">
+                                    <label for="policy-descrip-1" class="form-label label-fs-l">DESCRIPTION ABOUT POLICY</label>
+                                    <textarea id="policy-descrip-1" name="policy-descrip-1" cols="30" rows="6" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="div-border">
+                                    <h5>POLICY 2</h5>
+                                    <label for="policy-name-2" class="form-label label-fs-l">NAME OF POLICY</label>
+                                    <input type="text" class="form-control" id="policy-name-2" name="policy-name-2">
+                                    <label for="policy-descrip-2" class="form-label label-fs-l">DESCRIPTION ABOUT POLICY</label>
+                                    <textarea id="policy-descrip-2" name="policy-descrip-2" cols="30" rows="6" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div id="add-policy-div" class="col-12 align-c">
+                                <button type="button" onclick="newPolicy()">ADD A NEW POLICY</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="section6">
+                    <div id="nof-rooms">
+                        <div class="flex-container">
+                            <div id="left" class="flex-items opacity-25">
+                                <button type="button" onclick="remove()"></button>
+                            </div>
+                            <div id="middle" class="flex-items align-c">
+                                <span id="types-of-rooms">0</span>
+                            </div>
+                            <div id="right" class="flex-items">
+                                <button type="button" onclick="add()"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="nof-category" name="nof-category">
+                </div>
+            </form>
+        </div>
+        <div id="form-footer">
+            <div id="btn-div" class="row row-cols-sm-2 row-cols-1">
+                <div class="col align-c">
+                    <button type="button" id="back" onclick="prevSection()">Back</button>
+                </div>
+                <div class="col align-c">
+                    <button type="button" id="next" onclick="nextSection()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/login/bootstrap.js"></script>
+    <script src="../js/login/admin-signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+body{
+    background-image: url("../../img/bg/img2.jpg");
+    background-size: cover;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2em;
+}
+
+.form-label {
+    position: unset;
+    color: unset;
+    transform: unset;
+}
+
+.container {
+    background: #FFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 5px;
+    position: relative;
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 50px;
+    min-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#form-header {
+    padding: 10px;
+}
+
+#form-main {
+    padding: 20px 10px 10px 10px;
+    flex-grow: 1;
+}
+
+#form-footer {
+    padding: 10px;
+    position: relative;
+}
+
+.form-label {
+    font-size: .75em;
+    margin-top: 2px;
+    margin-left: 2px;
+    display: block;
+    word-break: break-word
+}
+
+.form-control,.form-select {
+    border: 1px solid #adaba8;
+}
+
+.label-fs-l  {
+    font-size: 1em;
+}
+
+.align-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#btn-div button {
+    width: 150px;
+    height: 50px;
+    margin: 0 10px;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+#btn-div .align-c {
+    justify-content: unset;
+}
+
+.upload-img-label {
+    display: block;
+    width: 200px;
+    background: #E3362C;
+    color: #FFF;
+    text-align: center;
+    padding: 12px;
+    margin: 10px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.row-cols-1 #back {
+    margin-bottom: 10px;
+}
+
+.upload-img {
+    display: none;
+}
+
+#section2, #section3, #section4, #section5, #section6 {
+    display: none;
+}
+
+/* Section 1 */
+
+#place-list {
+    position: absolute;
+    z-index: 10;
+    list-style: none;
+    margin: 2px;
+    padding: 0;
+    top: 40px;
+    left: 1.6%;
+    width: 96%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    overflow: hidden;
+}
+
+#place-list li {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+#place-list li:hover {
+    background-color: #ddd;
+}
+
+#section1 #sf1-r1,#section1 #sf1-r2 {
+    padding-top: 15px;
+}
+
+#section1 #sf1-r2 input,#section1 select{
+    padding-top: 8px;
+}
+
+/* Section 2 */
+
+#section2 .default-image {
+    padding: 0px 240px;
+}
+
+#section2 .default-image img {
+    width: 100%;
+    aspect-ratio: 11/7;
+}
+
+#section2 #carousel {
+    padding: 0px 240px;
+}
+
+#section2 .carousel-item {
+    aspect-ratio: 11/7;
+    background-size: cover;
+}
+
+/* Section 3 */
+
+#glocation-frame iframe {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Section 4 */
+
+#section4 .autocomplete-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#section4 #highlights,#section4 #facilities {
+    padding: 10px;
+    width: 100%;
+}
+
+#section4 #highlight-list,#section4 #facility-list {
+    position: absolute;
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#section4 #highlight-list li,#section4 #facility-list li {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+#section4 #highlight-list li:hover,#section4 #facility-list li:hover {
+    background-color: #ddd;
+}
+
+#section4 .div-s {
+    margin: 10px;
+    width: 94%;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 2rem;
+    align-items: center;
+}
+
+#section4 .div-s-s-l {
+    margin-left: 1rem;
+    width: 70%;
+    overflow: hidden;
+}
+
+#section4 .div-s-s-r {
+    display: flex;
+    align-items: center;
+    margin-left: 2vh;
+}
+
+#section4 .text-content {
+    display: block;
+    white-space: nowrap;
+}
+
+#section4 .scrolling-text {
+    animation: scrollText 15s linear infinite;
+}
+
+#section4 .remove-btn {
+    height: 4vh;
+    aspect-ratio: 1/1;
+    background-color: #FFF;
+    border: none;
+    text-decoration: none;
+    padding: 0;
+    border-radius: 2rem;
+    background-image: url('../../img/buttons/cancel.png');
+    background-size: cover;
+}
+
+/* Section 5 */
+
+#section5 .div-border {
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    padding: 20px;
+}
+
+#section5 .col {
+    margin-top: 10px;
+}
+
+#section5 #add-policy-div {
+    min-height: 100px;
+}
+
+/* Section 6 */
+
+#section6 #nof-rooms {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#section6 .flex-container {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+
+#section6 .flex-items {
+    width: 60px;
+    height: 60px;
+}
+
+#section6 .flex-items button {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+#section6 #left {
+    border-radius: 50%;
+}
+
+#section6 #left button {
+    background-color: #FFF;
+    border: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    background-image: url('../../img/buttons/minus.png');
+    background-size: cover;
+}
+
+#section6 #middle {
+    margin: 20px;
+    height: 100px;
+    width: 200px;
+    border-radius: 2rem;
+    border: 1px solid black;
+}
+
+#section6 #right {
+    border-radius: 50%;
+}
+
+#section6 #right button {
+    background-color: #FFF;
+    border: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    background-image: url('../../img/buttons/plus.png');
+    background-size: cover;
+}
+
+/* Dynamic Sections */
+
+.dynamic-sections {
+    display: none;
+}
+
+.dynamic-sections select {
+    height: 28px;
+    margin-left: 5px;
+    border-radius: 0.2rem;
+}
+
+.dynamic-sections .room-size {
+    width: 50%;
+    height: 30px;
+}
+
+.dynamic-sections .same-line {
+    display: inline-block;
+}
+
+.dynamic-sections .default-image {
+    padding: 0px 120px;
+}
+
+.dynamic-sections .default-image img {
+    width: 100%;
+    aspect-ratio: 11/7;
+}
+
+.dynamic-sections .rc-image-carousel {
+    padding: 0px 120px;
+}
+
+.dynamic-sections .rc-image-carousel .carousel-item {
+    aspect-ratio: 11/7;
+    background-size: cover;
+}
