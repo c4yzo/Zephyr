@@ -1,7 +1,7 @@
 <?php
-    $db_host = "localhost";
-    $db_username = "zephyr";
-    $db_password = "Abhiac@1603";
+    $db_host = "host";
+    $db_username = "username";
+    $db_password = "password";
 
     $con=mysqli_connect($db_host,$db_username,$db_password);
     if(!$con)
